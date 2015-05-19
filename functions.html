@@ -3,7 +3,19 @@
 
   // write a reduce function which reduce from the right side of the array
   // If start value is give, start witht that value and that value is not iterated over.
-
+  function reduceRight (arr, combineFun, startRight) {
+  if (startRight === undefined) {
+    var total = arr[arr.length-1];
+    var firstLoopIndex = arr.length-2;
+  } else {
+    var total = startRight;
+    var firstLoopIndex = arr.length-1;
+  }
+  for (var i = firstLoopIndex; i>0; i--) {
+    total = combineFun(total, arr[i]);
+  }
+  return total;
+  }
   // test arrays
   var arr1 = [0,1,2,3,4,5];
   var boo1 = [true, true, false];
