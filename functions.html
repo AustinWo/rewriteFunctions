@@ -16,6 +16,20 @@
   }
   return total;
   }
+
+  function reduce (arr, combineFun, startLeft) {
+    if (startLeft === unedfined) {
+      var total = arr[0];
+      var firstLoopIndex = 0;
+    } else {
+      var total = startLeft;
+      var firstLoopIndex = 1;
+    }
+    for (var i = firstLoopIndex; i<arr.length; i++) {
+      total = combineFun(total, arr[i]);
+    }
+    return total;
+  }
   // test arrays
   var arr1 = [0,1,2,3,4,5];
   var boo1 = [true, true, false];
