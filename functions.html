@@ -4,7 +4,14 @@
   // write a reduce function which reduce from the right side of the array
   // If start value is give, start witht that value and that value is not iterated over.
 
-  // test cases
-
-  // expcted results
+  // test arrays
+  var arr1 = [0,1,2,3,4,5];
+  var boo1 = [true, true, false];
+  var boo2 = [true, true, true];
+  var sum = function (a,b) {return a+b;};
+  var sumBoo = function (a,b) {return (a === true && b === true) ? true : false;};
+  // test results
+  var a = reduceRight(arr1, sum, 5);
+  var b = reduceRight(boo1, sumBoo);
+  var c = reduceRight(boo2, sumBoo);
 </script>
