@@ -35,8 +35,20 @@
   // if there are no even occurence items, returns null
 
   function evenOccurence (arr) {
+    for (var i = 0; i<arr.length; i++) {
+      var counter = 0;
+      for (var k = 0; k<arr.length; k++) {
+        if (arr[i] === arr[k]) {
+          counter++;
+        }
+      }
+      if ( (counter > 1) && ((counter % 2) === 0) ) {
+        return(arr[i]);
+      }
+    }
+    return null;
+  };
 
-  }
 
   // test arrays
   var arr1 = [0,1,2,3,4,5];
