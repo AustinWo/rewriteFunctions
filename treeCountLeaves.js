@@ -38,6 +38,31 @@ var Tree = function(value){
 };
 
 Tree.prototype.countLeaves = function () {
+  // is this a tree?
+  // if not, returns 0
+  // if (!this.value) {
+  //   return 0;
+  // }
+  //if it is only one node and has no child return 1
+  if (this.children.length===0) {
+    return 1;
+  }
+  var leafCounter = 0;
+  for (var i = 0; i<this.children.length; i++) {
+    howManyLeaves(this.children[i]);
+  }
+  function howManyLeaves (tree) {
+    // take tree as an input
+    // base case
+    if (tree.children.length === 0) {
+      return leafCounter++;
+    }
+    // recursive case
+    for (var k = 0; k<tree.children.length; k++) {
+      howManyLeaves(tree.children[k]);
+    }
+  }
+  return leafCounter;
 }
 
 /**
