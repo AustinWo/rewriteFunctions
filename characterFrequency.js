@@ -37,4 +37,37 @@
 
 
 var characterFrequency = function(string) {
+  var result = [];
+  var charAlreadyInResult = []
+  for (var i = 0; i<string.length; i++) {
+    // go thru each letter
+    var thisArr = []
+    var thisChar = string[i]
+    // if this character doesnt exist in the result
+    if ( charAlreadyInResult.indexOf(thisChar) === -1 ) {
+      // make a new tuble
+      thisArr.push(thisChar);
+      thisArr.push(1);
+      // add this char to the memory
+      charAlreadyInResult.push(thisChar);
+      // push to result arr
+      result.push(thisArr);
+    } else {
+      result[charAlreadyInResult.indexOf(thisChar)][1]++;
+    }
+  }
+    // now we will have an array of arrays based on the order of occurance
+    // how to sort??
+    // descending order in frequency first
+    // then asending order by character
+   var sortFun = function (tub1, tub2) {
+    if (tub1[1] < tub2[1]) {
+      return 1;
+    } else if (tub1[1] > tub2[1]) {
+      return -1;
+    } else {
+      return tub1[0] < tub2[0] ? -1 : 1;
+    }
+   };
+   return result.sort(sortFun);
 };
