@@ -71,3 +71,13 @@ var characterFrequency = function(string) {
    };
    return result.sort(sortFun);
 };
+
+// test cases
+
+// var a = characterFrequency('mississippi');
+// var b = characterFrequency('miaaiaaippi');
+// var c = characterFrequency('mmmaaaiiibbb');
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
