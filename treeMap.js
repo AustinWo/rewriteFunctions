@@ -58,3 +58,21 @@ Tree.prototype.mapInPlace = function (callback) {
   applyCallback.call(this);
   return this;
 };
+
+// test cases
+
+ var root1 = new Tree(1);
+ var branch2 = root1.addChild(2);
+ var branch3 = root1.addChild(3);
+ var leaf4 = branch2.addChild(4);
+ var leaf5 = branch2.addChild(5);
+ var leaf6 = branch3.addChild(6);
+ var leaf7 = branch3.addChild(7);
+ var newTree = root1.mapInPlace(function (value) {
+   return value * 2;
+ })
+// newTree.value // 2
+// newTree.children[0].value // 4
+// newTree.children[1].value // 6
+// newTree.children[0].children[1].value // 10
+// newTree.children[1].children
