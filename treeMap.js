@@ -35,3 +35,13 @@ Tree.prototype.isDescendant = function(child){
     return false;
   }
 };
+
+Tree.prototype.removeChild = function(child){
+  var index = this.children.indexOf(child);
+  if(index !== -1){
+    // remove the child
+    this.children.splice(index,1);
+  }else{
+    throw new Error("That node is not an immediate child of this tree");
+  }
+};
